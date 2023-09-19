@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block log %}
+
+
+
+{% if messages %}
+    {% for i in messages %}
+    {% if i.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger alert-dismissible">
+        <button class="close" data-dismiss="alert">&times;</button>
+        {{i}}
+    </div>
+    {%endif%}
+    {%endfor%}
+
+
+{%endif%}
+
+<form  action="" method="post" >
+    {% csrf_token %}
+<h1  style="text-align: center;  ">Mtime-Tickets <i  class="fa-solid fa-ticket"></i></h1>
+
+    {{form}}
+    <button class="signin"> 
+        Sign In 
+      </button>
+    <hr><br>
+    <div style="text-align: center;">
+        <strong><a  href="{% url 'reg' %}">new user??</a></strong>
+    
+    </div>
+
+
+
+
+</form>
+
+
+
+
+{% endblock log %}

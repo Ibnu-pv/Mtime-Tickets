@@ -1,0 +1,39 @@
+{% extends 'nav.html' %}
+{%block nav%}
+
+    <br><div style="background-color: black; height: 700px; width: 1260px; margin-left: 10px;" >
+        <img  style="margin-left: 59px; margin-top: 60px" src="{{details.image.url}}" alt=""height="400px;" width="300px;">
+        
+        <h1 style="color: aliceblue; margin-left: 486px; margin-top: -385px; font-size:xxx-large;">{{details.name}}</h1>
+        <p style="color: aliceblue; margin-left: 434px; margin-top: 54px; font-size:large;">{{details.description}}</p>
+        <h2 style="margin-left: 826px; margin-top: -15px;color: rgb(232, 49, 17);">watch Trailer</h2>
+        <h1 style="color: aliceblue; margin-left: 434px; margin-top: 60px; font-size:large;">Rating {{i.rating}}/5</h1>
+        <br><a style="width: 300px; margin-left: 434px;" class="btn btn-danger" href="{% url 'tl' details.id   %}">Book Your Tickets</a>
+        
+
+        
+        <div>
+            <video style="height: 300px; width: 429px; margin-left: 767px; margin-top: -91px;" src="{{details.trailer.url}}" controls></video>
+            
+        </div>
+        <strong><h2 style="color: azure; margin-left:15px; margin-top:-158px;">Cast :</h2></strong><br><br><br><br><br>
+        <img style="border-radius: 50%; height: 93px; width: 75px; margin-left: 42px; margin-top:-156px;" src="{{details.cast1.url}}" alt="">
+        <img style="border-radius: 50%; height: 93px; width: 85px; margin-left: 30px; margin-top:-151px;" src="{{details.cast2.url}}" alt="">
+        <img style="border-radius: 50%; height: 93px; width: 85px; margin-left: 38px; margin-top:-151px;" src="{{details.cast3.url}}" alt="">
+        <img style="border-radius: 50%; height: 93px; width: 85px; margin-left: 46px; margin-top:-151px;" src="{{details.cast4.url}}" alt="">
+        <img style="border-radius: 50%; height: 93px; width: 85px; margin-left: 52px; margin-top:-151px;" src="{{details.cast5.url}}" alt="">
+
+
+
+
+
+    </div>
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <span class="material-symbols-outlined">
+          add_shopping_cart
+          </span>
+      </button> -->
+    
+
+
+{%endblock nav%}

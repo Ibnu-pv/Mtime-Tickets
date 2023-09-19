@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block log %}
+
+
+        <form  class="reg" method="post">
+            {% csrf_token %}
+    
+            <div style="margin-left: 40px;" class="teble">
+                {{form.as_div}}
+            </div><br>
+            <div style="margin-left: 40px;">
+                <button class="btn btn-info">sign in</button>
+            </div>
+           <div style="margin-left: 60px; margin-top: 20px"> already User?<a href="{% url 'h' %}">Log in</a></div>
+        </form>
+    
+    </div>
+{% endblock log %}
+
+
+

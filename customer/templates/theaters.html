@@ -1,0 +1,38 @@
+{% extends 'nav.html' %}
+<!-- {% load static %} -->
+{% block nav %}
+<div style="margin-left: 21px;">
+  <img style="height: 400px; width: 600px; margin-left:5px;" src="{% static 'images/th.jpg' %}" alt="">
+  <img style="height: 400px; width: 600px; margin-left:5px;" src="{% static 'images/fm.jpg' %}" alt="">
+
+</div><br>
+
+
+{% for i in Theaters %}
+ <div style="background-color: black;">
+   <div style="background-color: white; color:rgb(10, 11, 12);" class="card text-center">
+     <img class="card-img-top" src="holder.js/100px180/" alt="">
+     <div class="card-body">
+       <h1 class="card-title">{{i.name}}</h1>
+       <p class="card-text">{{i.adress}}</p>
+       <!-- <h3>{{i.price}}</h3> -->
+       <div  class="btn btn-success" style="background-color: rgb(17, 27, 27); color:greenyellow; width: 126px;"><h4>Ticket price:{{i.price}}</h4></div><br><br>
+      
+       <a class="btn btn-success" href="https://www.google.com/maps/search/theaters+in+calicut/@11.2536258,75.7790066,15z/data=!3m1!4b1?entry=ttu"><span class="material-symbols-outlined">
+        location_on
+        </span>View in map</a>
+       <a class="btn btn-danger" href="{% url 'py' i.id %}">Book</a>
+     </div>
+   </div>
+ </div>
+
+
+
+  
+ 
+
+{%endfor%}
+
+
+
+{% endblock nav %}

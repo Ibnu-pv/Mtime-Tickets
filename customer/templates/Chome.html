@@ -1,0 +1,42 @@
+{% extends 'nav.html' %}
+{%load static%}
+{% block nav %}
+
+  <div style="background-color: black;">
+    
+        
+        <div id="mob" style="background-color: #04386f; margin-left: -43px; margin-right: 0px; width:1313px;" class="row text-center">
+          {% for i in Movies %}
+          <!-- rgb(195, 37, 230, 0.361) -->
+          <div   style="width: 300px; background-color: white;margin-top: 10px; margin-left: 10px; left: 50px; box-shadow: 0 0 10 10 black;" class="card text-center" style="width: 18rem; border-radius: 30%d;">
+            <a href="{% url 'mvdt' i.id %}"><img style="width: 263px; margin-left: 2px; height: 308px; margin-top: 37px;  " class="card-img-top" height="200px" width="150px" src="{{i.image.url}}" alt="Card image cap"></a>
+            <div class="card-body">
+              <h5 style="color: rgb(19, 13, 13);" class="card-title">{{i.name}}({{i.category}})</h5>
+              <!-- <p style="color: rgb(6, 6, 6);" class="card-text">{{i.category}}</p> -->
+            </div>
+            <ul class="list-group list-group-flush">
+              <!-- <li class="list-group-item">Cras justo odio</li> -->
+              <!-- <li class="list-group-item">{{i.description}}</li>
+              <li class="list-group-item">{{i.price}}</li> -->
+            </ul>
+            <div class="card-body text-center">
+              <a style="width: 200px; margin-top: -70px;" class="btn btn-danger" href="{% url 'mvdt' i.id %}">Book Now</a>
+              
+              
+            </div>
+          </div>
+          {%endfor%}
+          
+    
+    
+    
+    
+        </div>
+        
+  </div>
+
+
+
+{% endblock nav %}    
+    
+  

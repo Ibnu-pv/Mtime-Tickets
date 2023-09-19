@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+  background-color: #04386f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  height: 570px;
+}
+.cont {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  height: 512px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+  
+      <div class="col-75" style="height: 480px; width: 500px; margin-left: 656px;">
+      <div class="container">
+        <form action="" method="post">
+           {% csrf_token %}
+        
+  
+            <div class="col-50" style="height: 480px; width: 400px; margin-left: -10px;">
+              
+              <h3>Payment</h3>
+              
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="September">
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="352">
+                </div>
+              </div>
+            </div>
+           <div style="background-color: #f2f2f2; ">
+              <div class="cont" style="margin-left: -538px; margin-top: -496px; width: 370px; background-color:aliceblue;">
+                <h1>Show Details</h1>
+                <br><br><label style="color: #0b0606;" for="a1">phone :</label>
+                <input style="width: 200px;" type="text" id="a1" name="phn" placeholder="98xxxxxx09">
+                <label style="color: #0a0a0a;" for="a2">seats :</label>
+                <input type="number" id="a2" name="st" ><br>
+                <!-- <label style="color: #080808;" for="a3">show time</label><br> -->
+                <!-- <input style="width: 200px;" type="text" id="a3" name="show_time" placeholder="4:30"> --> 
+                <br>Select Show: <select class="btn btn-success" id="a3" name="stm">
+                  <option class="btn btn-success" value="16:30">4:30 PM</option>
+                  <option class="btn btn-success" value="06:30">6:30 PM</option>
+                  <option class="btn btn-success" value="10:15">10:15 PM</option>
+                  <option class="btn btn-success" value="11:45">11:45 PM</option>
+                </select><br>
+                
+                <br><label style="color: #111111;" for="a4">Select Date : </label>
+                <input class="btn btn-success" style="width: 200px;" type="date" id="a4" name="dt" placeholder="4:30">
+               
+                
+                
+              </div>
+           </div>
+            
+          </div>
+          
+          <input type="submit" value="Make Payment" class="btn">
+        </form>
+      </div>
+    </div>
+   
+  </div>
+  </div>
+  
+    
+  
+  
+
+
+</body>
+</html>
